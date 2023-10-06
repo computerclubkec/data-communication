@@ -20,6 +20,16 @@ class Signals:
         self.original_signal = signal
         self.signal = [int(bit) for bit in signal]
 
+    def get_signal(self):
+        """
+        Get the signal as a list of bits.
+
+        Returns:
+            list of int: The signal as a list of integer values (0 or 1).
+        """
+        return self.signal
+
+
     def display(self):
         """
         Display the signal as a waveform.
