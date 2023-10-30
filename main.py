@@ -1,11 +1,17 @@
-from signals import Signals
+"""
+This is the main driver code for the data-communication project.
+
+Example usage:
+
+    $ python main.py
+
+"""
+
+from signals import Signals # pylint: disable=import-error
 
 def main():
     """
-    Main function to demonstrate the Signals class.
-
-    This function creates a Signals object with a binary signal,
-    then displays the signal as a digital waveform.
+    Main function to run any encoding and decoding modules.
 
     Returns:
         None
