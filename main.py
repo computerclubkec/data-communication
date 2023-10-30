@@ -7,7 +7,7 @@ Example usage:
 
 """
 
-from signals import Signals # pylint: disable=import-error
+from .signals import Signals
 
 def main():
     """
