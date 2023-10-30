@@ -30,10 +30,11 @@ class Signals:
         Args:
             signal (str): A binary signal represented as a string of 0s and 1s.
         """
+        self.name = "Original Signal"
         self.original_signal = signal
         self.signal = [int(bit) for bit in signal]
 
-    def get_signal(self) -> list(int):
+    def get_signal(self) -> list:
         """
         Get the signal as a list of bits.
 
@@ -42,6 +43,34 @@ class Signals:
         """
         return self.signal
 
+    def set_signal(self, signal, name):
+        '''
+        Set the signal to a new list of bits.
+
+        This method sets the signal to a new list of bits and updates the name of the signal.
+
+        Args:
+            signal (list of int): The new signal as a list of integer values (0 or 1).
+            name (str): The name of the new signal.
+
+        Returns:
+            None
+        '''
+        self.name = name
+        self.signal = [int(bit) for bit in signal]
+
+    def restore_signal(self) -> list:
+        '''
+        Restore the signal to its original state.
+
+        This method restores the signal to its original states
+        by setting the signal to the original signal and updating the name of the signal.
+
+        Returns:
+            None
+        '''
+        self.name = "Original Signal"
+        self.signal = self.original_signal
 
     def display(self) -> None:
         """
@@ -63,6 +92,6 @@ class Signals:
         plt.ylim(-1.1,1.1)
         plt.plot(x_axis, y_axis)
         plt.grid(linewidth=0.5)
-        plt.title(self.original_signal)
+        plt.title(f"{self.name}: {self.signal}")
         plt.tight_layout()
         plt.show()
