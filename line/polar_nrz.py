@@ -42,6 +42,20 @@ def polar_nrz_encode(signal):
 
 
 def polar_nrz_decode(signal):
+    """
+    This function decodes a signal that was encoded using the Polar NRZ encoding scheme.
+
+    In this scheme, a binary 1 is represented as a positive voltage and a binary 0 as a negative voltage.
+    This function takes a Signals object as input, which should have a method get_signal that returns the 
+    encoded signal, and a method set_signal that sets the decoded signal.
+
+    Parameters:
+        signal (Signals): The signal to be decoded.
+
+    Example:
+        signal = Signals([1, -1, 1, 1, -1])
+        polar_nrz_decode(signal)
+    """
     decoded_bits = []
     for bit in signal.get_signal():
         if bit == 1:

@@ -22,9 +22,9 @@ def main():
     signal.display()
     # unipolar_nrz_encode(signal)
     # signal.display()
-    encoded_bits = polar_nrz_encode(signal)
+    polar_nrz_encode(signal)
     signal.display()
-    polar_nrz_decode(encoded_bits)
+    polar_nrz_decode(signal)
     signal.display()
 
 if __name__ == "__main__":
