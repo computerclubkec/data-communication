@@ -18,7 +18,7 @@ Data communication is an essential part of modern technology and involves encodi
 
 The following tools are included in this repository:
 
-- **Source Encoding Tools**: Tools for encoding data at the source, such as data compression algorithms.
+- **Source Encoding/Decoding Tools**: Tools for encoding data at the source, such as data compression algorithms.
 
 - **Channel Encoding/Decoding Tools**: Tools for encoding data for transmission over a communication channel and decoding it on the receiving end, including error correction codes.
 
