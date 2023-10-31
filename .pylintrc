@@ -1,2 +1,5 @@
 [MASTER]
 good-names=data-communication
+
+[FORMAT]
+max-line-length=150
