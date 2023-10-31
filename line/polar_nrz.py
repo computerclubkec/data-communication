@@ -49,7 +49,7 @@ def polar_nrz_decode(signal):
     This function takes a Signals object as input, which should have a method get_signal that returns the 
     encoded signal, and a method set_signal that sets the decoded signal.
 
-    Parameters:
+    Args:
         signal (Signals): The signal to be decoded.
 
     Example:
