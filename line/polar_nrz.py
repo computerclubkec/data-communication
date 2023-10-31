@@ -29,7 +29,7 @@ def polar_nrz_encode(signal):
         signal (Signals): A Signals object representing the binary signal to be encoded.
 
     Returns:
-        None
+        None: The function modifies the signal object in-place, updating its internal state with the encoded signal.
     """
     encoded_bits = []
     for bit in signal.get_signal():
@@ -49,12 +49,11 @@ def polar_nrz_decode(signal):
     This function takes a Signals object as input, which should have a method get_signal that returns the 
     encoded signal, and a method set_signal that sets the decoded signal.
 
-    Parameters:
+    Args:
         signal (Signals): The signal to be decoded.
 
-    Example:
-        signal = Signals([1, -1, 1, 1, -1])
-        polar_nrz_decode(signal)
+    Returns:
+    None: The function modifies the signal object in-place, updating its internal state with the decoded signal.    
     """
     decoded_bits = []
     for bit in signal.get_signal():
