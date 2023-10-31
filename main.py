@@ -8,7 +8,8 @@ Example usage:
 """
 
 from .signals import Signals
-from .line.unipolar_nrz import unipolar_nrz_encode
+# from line.unipolar_nrz import unipolar_nrz_encode
+from .line.polar_nrz import polar_nrz_encode, polar_nrz_decode
 
 def main():
     """
@@ -19,7 +20,11 @@ def main():
     """
     signal = Signals("11011100111")
     signal.display()
-    unipolar_nrz_encode(signal)
+    # unipolar_nrz_encode(signal)
+    # signal.display()
+    encoded_bits = polar_nrz_encode(signal)
+    signal.display()
+    polar_nrz_decode(encoded_bits)
     signal.display()
 
 if __name__ == "__main__":
