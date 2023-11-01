@@ -37,3 +37,13 @@ def unipolar_rz_encode(signal):
         encoded_bits.append(0)
     signal.set_signal(encoded_bits,"RZ","Unipolar RZ")
 
+
+def unipolar_rz_decode(signal):
+
+    decoded_bits = []
+    for bit in signal.get_signal():
+        if bit == 1:
+            encoded_bits.append(1)
+        else:
+            encoded_bits.append(0)
+    signal.set_signal(encoded_bits, "NRZ", "Decoded Unipolar RZ")

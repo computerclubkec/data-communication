@@ -3,3 +3,7 @@ good-names=data-communication
 
 [FORMAT]
 max-line-length=150
+
+[MESSAGES CONTROL]
+disable=all
+enable=warning

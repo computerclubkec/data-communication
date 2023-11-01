@@ -87,11 +87,11 @@ class Signals:
         Returns:
             None
         """
-        if self.duration_type == "NRZ":
-            x_axis = np.repeat(range(len(self.signal)), 2)
-        else:
+        if self.duration_type == "RZ":
             x_axis = np.arange(0,len(self.signal)/2,0.5)
             x_axis = np.repeat(x_axis,2)
+        else:
+            x_axis = np.repeat(range(len(self.signal)), 2)
         y_axis = np.repeat(self.signal, 2)
         x_axis = x_axis[1:]
         y_axis = y_axis[:-1]

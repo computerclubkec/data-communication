@@ -7,8 +7,8 @@ Example usage:
 
 """
 
-from .signals import Signals
-from .line.unipolar_rz import unipolar_rz_encode
+from signals import Signals
+from line.unipolar_rz import unipolar_rz_encode
 
 def main():
     """
