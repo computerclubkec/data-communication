@@ -77,6 +77,9 @@ class Signals:
         """
         self.name = name
         self.signal = signal
+        self.bits = []
+        for bit in range(0,len(self.signal),self.ONE_CLOCK):
+            self.bits.append(self.signal[bit])
 
     def restore_signal(self) -> None:
         """

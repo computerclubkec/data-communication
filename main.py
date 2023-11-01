@@ -6,10 +6,8 @@ Example usage:
     $ python main.py
 
 """
-
 from signals import Signals
-from line.unipolar_nrz import unipolar_nrz_encode
-from line.unipolar_rz import unipolar_rz_encode
+from line.polar_nrz import polar_nrz_encode,polar_nrz_decode
 
 def main():
     """
@@ -18,9 +16,11 @@ def main():
     Returns:
         None
     """
-    signal = Signals("1")
+    signal = Signals("1011")
     signal.display()
-    unipolar_nrz_encode(signal)
+    polar_nrz_encode(signal)
+    signal.display()
+    polar_nrz_decode(signal)
     signal.display()
 
 if __name__ == "__main__":

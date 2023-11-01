@@ -26,6 +26,6 @@ def unipolar_nrz_encode(signal):
     for bit in signal.get_signal():
         if bit == 1:
             encoded_bits.extend([1] * Signals.ONE_CLOCK)
-        else:
+        elif bit == 0:
             encoded_bits.extend([0] * Signals.ONE_CLOCK)
     signal.set_signal(encoded_bits,"Unipolar NRZ")
