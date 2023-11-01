@@ -1,2 +1,8 @@
 [MASTER]
 good-names=data-communication
+ignore=test.py,main.py
+init-hook='import sys; sys.path.append(".")'
+
+[FORMAT]
+max-line-length=150
+
