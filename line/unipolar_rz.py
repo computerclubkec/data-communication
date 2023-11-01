@@ -14,6 +14,7 @@ Example usage:
     Signal type: Unipolar RZ
     Signal data: [1, 0, 1, 0, 1, 0, 1, 0]
 '''
+from signals import Signals
 
 def unipolar_rz_encode(signal):
     '''
@@ -31,11 +32,11 @@ def unipolar_rz_encode(signal):
     encoded_bits = []
     for bit in signal.get_signal():
         if bit == 1:
-            encoded_bits.append(1)
+            encoded_bits.extend([1] * Signals.HALF_CLOCK)
+            encoded_bits.extend([0] * Signals.HALF_CLOCK)
         else:
-            encoded_bits.append(0)
-        encoded_bits.append(0)
-    signal.set_signal(encoded_bits,"RZ","Unipolar RZ")
+            encoded_bits.extend([0] * Signals.ONE_CLOCK)
+    signal.set_signal(encoded_bits,"Unipolar RZ")
 
 
 def unipolar_rz_decode(signal):

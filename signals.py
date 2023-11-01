@@ -10,6 +10,7 @@ Example:
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 class Signals:
     """
     A class for digital signals.
@@ -18,13 +19,14 @@ class Signals:
         name (str): The name of the signal
         original_signal (str): The original signal as a string.
         signal (list of int): The signal as a list of integer values (0 or 1).
-        duriation_type (str): The signal duration for a bit, 
-                                either Return to Zero (RZ) or Non-Return to Zero (NRZ)
     
     Methods:
         get_signal: Get the signal as a list of bits.
         display: Display the signal as a waveform.
     """
+
+    ONE_CLOCK = 1000
+    HALF_CLOCK = 500
 
     def __init__(self, signal:str) -> None:
         """
@@ -34,9 +36,12 @@ class Signals:
             signal (str): A binary signal represented as a string of 0s and 1s.
         """
         self.name = "Original Signal"
-        self.original_signal = signal
-        self.signal = [int(bit) for bit in signal]
-        self.duration_type = "NRZ"
+        self.intial_bits = [int(bit) for bit in signal]
+        self.bits = self.intial_bits
+        self.bits_len = len(self.bits)
+        self.bits_duration = np.linspace(0,self.bits_len, self.bits_len * self.ONE_CLOCK, endpoint=False)
+        self.signal = [int(bit) for bit in signal for _ in range(self.ONE_CLOCK)]
+        
 
     def get_signal(self) -> list:
         """
@@ -45,9 +50,9 @@ class Signals:
         Returns:
             list of int: The signal as a list of integer values (0 or 1).
         """
-        return self.signal
+        return self.bits
 
-    def set_signal(self, signal, duration, name):
+    def set_signal(self, signal, name):
         '''
         Set the signal to a new list of bits.
 
@@ -55,15 +60,14 @@ class Signals:
 
         Args:
             signal (list of int): The new signal as a list of integer values (0 or 1).
-            duration (str): The duration type. Either RZ or NRZ.
+            d_type (str): The duration type. Either RZ or NRZ.
             name (str): The name of the new signal.
 
         Returns:
             None
         '''
         self.name = name
-        self.duration_type = duration
-        self.signal = [int(bit) for bit in signal]
+        self.signal = signal
 
     def restore_signal(self) -> list:
         '''
@@ -76,7 +80,7 @@ class Signals:
             None
         '''
         self.name = "Original Signal"
-        self.signal = self.original_signal
+        self.signal = self.intial_bits
 
     def display(self) -> None:
         """
@@ -87,21 +91,10 @@ class Signals:
         Returns:
             None
         """
-        if self.duration_type == "RZ":
-            x_axis = np.arange(0,len(self.signal)/2,0.5)
-            x_axis = np.repeat(x_axis,2)
-        else:
-            x_axis = np.repeat(range(len(self.signal)), 2)
-        y_axis = np.repeat(self.signal, 2)
-        x_axis = x_axis[1:]
-        y_axis = y_axis[:-1]
-        x_axis = np.append(x_axis, x_axis[-1] + 1)
-        y_axis = np.append(y_axis, y_axis[-1])
-        plt.xticks(range(len(self.signal)+1))
+        plt.figure()
+        plt.plot(self.bits_duration,self.signal)
+        plt.grid(True)
+        plt.xticks(range(0,len(self.bits)+1))
         plt.yticks([-1,0,1])
-        plt.ylim(-1.1,1.1)
-        plt.plot(x_axis, y_axis)
-        plt.grid(linewidth=0.5)
-        plt.title(f"{self.name}: {self.signal}")
-        plt.tight_layout()
+        plt.title(f"{self.name} for: {self.intial_bits}")
         plt.show()
