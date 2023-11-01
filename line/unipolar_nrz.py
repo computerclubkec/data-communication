@@ -7,7 +7,6 @@ Example usage:
     >>> unipolar_nrz_encode(signal)
     >>> signal.display()
 """
-
 from signals import Signals
 
 def unipolar_nrz_encode(signal):
@@ -29,5 +28,4 @@ def unipolar_nrz_encode(signal):
             encoded_bits.extend([1] * Signals.ONE_CLOCK)
         else:
             encoded_bits.extend([0] * Signals.ONE_CLOCK)
-    
     signal.set_signal(encoded_bits,"Unipolar NRZ")

@@ -7,7 +7,6 @@ Example usage:
     >>> unipolar_rz_encode(signal)
     >>> signal.display()
 """
-
 from signals import Signals
 
 def unipolar_rz_encode(signal):
