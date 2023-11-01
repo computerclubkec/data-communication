@@ -18,7 +18,7 @@ def main():
     Returns:
         None
     """
-    signal = Signals("11011100111")
+    signal = Signals("1")
     signal.display()
     unipolar_nrz_encode(signal)
     signal.display()

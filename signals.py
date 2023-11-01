@@ -15,6 +15,12 @@ class Signals:
     Attributes:
         ONE_CLOCK (int): Constant representing one clock cycle's duration in samples (default: 1000).
         HALF_CLOCK (int): Constant representing half a clock cycle's duration in samples (default: 500).
+        name (str): The name of the signal.
+        initial_bits (list): The original binary signal as a list of integers.
+        bits (list): The current binary signal as a list of integers.
+        bits_len (int): The length of the binary signal.
+        bits_duration (numpy.ndarray): The time duration of the binary signal.
+        signal (list): The binary signal as a list of integers, where each bit lasts for ONE_CLOCK duration.
 
     Methods:
         __init__(self, signal: str) -> None:
@@ -32,7 +38,6 @@ class Signals:
         display(self) -> None:
             Display a plot of the binary signal with timestamps and labels.
     """
-    
     ONE_CLOCK = 1000
     HALF_CLOCK = 500
 
@@ -41,7 +46,7 @@ class Signals:
         Initialize a Signals object.
 
         Args:
-            - signal (str): A binary signal represented as a string of '0's and '1's.
+            signal (str): A binary signal represented as a string of '0's and '1's.
         """
         self.name = "Original Signal"
         self.intial_bits = [int(bit) for bit in signal]
@@ -55,7 +60,7 @@ class Signals:
         Get the current binary signal as a list of bits.
 
         Returns:
-            - list: A list containing the binary bits of the current signal.
+            list: A list containing the binary bits of the current signal.
         """
         return self.bits
 

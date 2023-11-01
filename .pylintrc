@@ -1,9 +1,7 @@
 [MASTER]
 good-names=data-communication
+ignore=test.py,main.py
 
 [FORMAT]
 max-line-length=150
 
-[MESSAGES CONTROL]
-disable=all
-enable=warning
