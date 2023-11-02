@@ -2,7 +2,7 @@
 Polar RZ encoding and decoding.
 
 Example usage:
-    
+
     >>> signal = Signals("11010101")
     >>> polar_rz_encode(signal)
     >>> signal.display()
@@ -42,7 +42,7 @@ def polar_rz_decode(signal):
 
     Returns:
         None
-    '''    
+    '''
     decoded_bits = []
     for bit in signal.get_signal():
         if bit == 1:
@@ -50,4 +50,3 @@ def polar_rz_decode(signal):
         else:
             decoded_bits.extend([0] * Signals.ONE_CLOCK)
     signal.set_signal(decoded_bits,"Decoded Polar RZ")
- 

@@ -13,7 +13,7 @@ def polar_nrz_encode(signal):
     """
     Encodes a binary signal using the polar NRZ encoding scheme.
 
-    The polar NRZ encoding scheme represents a binary 1 as a positive voltage 
+    The polar NRZ encoding scheme represents a binary 1 as a positive voltage
     and a binary 0 as a negative voltage.
 
     Args:
@@ -38,7 +38,7 @@ def polar_nrz_decode(signal):
         signal (Signals): The signal to be decoded.
 
     Returns:
-        None     
+        None
     """
     decoded_bits = []
     for bit in signal.get_signal():
