@@ -13,7 +13,7 @@ def unipolar_nrz_encode(signal):
     """
     Encodes a binary signal using the unipolar NRZ encoding scheme.
 
-    The unipolar NRZ encoding scheme represents a binary 1 as a positive voltage 
+    The unipolar NRZ encoding scheme represents a binary 1 as a positive voltage
     and a binary 0 as zero voltage.
 
     Args:
