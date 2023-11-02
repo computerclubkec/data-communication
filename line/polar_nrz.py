@@ -9,6 +9,7 @@ Example usage:
 
 """
 from signals import Signals
+
 def polar_nrz_encode(signal):
     """
     Encodes a binary signal using the polar NRZ encoding scheme.
