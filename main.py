@@ -7,7 +7,7 @@ Example usage:
 
 """
 from signals import Signals
-from line.bipolar_nrz import bipolar_nrz_encode,bipolar_nrz_decode
+from line.nrz_level import nrz_level_encode, nrz_level_decode
 
 def main():
     """
@@ -18,10 +18,10 @@ def main():
     """
     signal = Signals("101001110")
     signal.display()
-    bipolar_nrz_encode(signal)
+    nrz_level_encode(signal)
     signal.display()
     print(signal.bits)
-    bipolar_nrz_decode(signal)
+    nrz_level_decode(signal)
     signal.display()
 if __name__ == "__main__":
     main()
