@@ -28,7 +28,7 @@ def bipolar_nrz_encode(signal):
     for bit in signal.get_signal():
         if bit == 1:
             encoded_bits.extend([alt_one] * Signals.ONE_CLOCK)
-            alt_one *= -1
+            alt_one = -alt_one
         else:
             encoded_bits.extend([0] * Signals.ONE_CLOCK)
     signal.set_signal(encoded_bits,"Bipolar NRZ")
