@@ -7,7 +7,7 @@ Example usage:
 
 """
 from signals import Signals
-from line.nrz_level import nrz_level_encode, nrz_level_decode
+from line.nrz_invert import nrz_invert_encode, nrz_invert_decode
 
 def main():
     """
@@ -16,12 +16,12 @@ def main():
     Returns:
         None
     """
-    signal = Signals("101001110")
+    signal = Signals("010010110110")
     signal.display()
-    nrz_level_encode(signal)
+    nrz_invert_encode(signal,0)
     signal.display()
-    print(signal.bits)
-    nrz_level_decode(signal)
+    nrz_invert_decode(signal,0)
     signal.display()
+    
 if __name__ == "__main__":
     main()

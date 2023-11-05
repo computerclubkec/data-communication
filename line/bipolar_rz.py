@@ -30,7 +30,7 @@ def bipolar_rz_encode(signal):
         if bit == 1:
             encoded_bits.extend([alt_one] * Signals.HALF_CLOCK)
             encoded_bits.extend([0] * Signals.HALF_CLOCK)
-            alt_one *= -1
+            alt_one = -alt_one
         else:
             encoded_bits.extend([0] * Signals.ONE_CLOCK)
     signal.set_signal(encoded_bits,"Bipolar RZ")

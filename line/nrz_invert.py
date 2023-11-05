@@ -25,7 +25,7 @@ def nrz_invert_encode(signal, previous_bit=1):
         None
     """
     encoded_bits = []
-    alt_bit = previous_bit if previous_bit == 1 else -1
+    alt_bit = 1 if previous_bit == 1 else -1
     for bit in signal.get_signal():
         if bit == 1:
             alt_bit = -alt_bit
@@ -46,11 +46,11 @@ def nrz_invert_decode(signal, previous_bit=1):
         None
     """
     decoded_bits = []
-    alt_bit = previous_bit if previous_bit == 1 else -1
+    alt_bit = 1 if previous_bit == 1 else -1
     for bit in signal.get_signal():
         if bit == alt_bit:
-            decoded_bits.extend([1] * Signals.ONE_CLOCK)
-        else:
             decoded_bits.extend([0] * Signals.ONE_CLOCK)
+        else:
             alt_bit = -alt_bit
-    signal.set_signal(decoded_bits,"NRZ Invert Decoded")
+            decoded_bits.extend([1] * Signals.ONE_CLOCK)
+    signal.set_signal(decoded_bits, "NRZ Invert Decoded")
