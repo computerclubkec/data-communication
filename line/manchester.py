@@ -1,10 +1,12 @@
 """
+Manchester
+
 This module contains the function to encode a binary signal using the Manchester encoding scheme.
 
 Example usage:
 
     >>> signal = Signals("11011101")
-    >>> manchester(signal)
+    >>> manchester_encode(signal)
     >>> signal.display()
 """
 from signals import Signals
