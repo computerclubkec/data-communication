@@ -7,7 +7,7 @@ Example usage:
 
 """
 from signals import Signals
-from line.nrz_invert import nrz_invert_encode, nrz_invert_decode
+from line.manchester import manchester_encode, manchester_decode
 
 def main():
     """
@@ -18,9 +18,9 @@ def main():
     """
     signal = Signals("010010110110")
     signal.display()
-    nrz_invert_encode(signal,0)
+    manchester_encode(signal)
     signal.display()
-    nrz_invert_decode(signal,0)
+    manchester_decode(signal)
     signal.display()
     
 if __name__ == "__main__":
