@@ -41,7 +41,7 @@ def nrz_invert_decode(signal, previous_bit=1):
     Args:
         signal (Signals): The signal to be decoded.
         previous_bit (int): The previous bit that was used for encoding.
-        
+
     Returns:
         None
     """
