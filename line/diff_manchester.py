@@ -37,7 +37,7 @@ def diff_manchester_encode(signal,previous_bit=0):
 
 def diff_manchester_decode(signal, previous_bit=0):
     """
-    This function decodes a signal that was encoded using the Manchester encoding scheme.
+    This function decodes a signal that was encoded using the Differential Manchester encoding scheme.
 
     Args:
         signal (Signals): The signal to be decoded.
