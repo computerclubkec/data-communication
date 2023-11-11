@@ -7,7 +7,7 @@ Example usage:
 
 """
 from signals import Signals
-from line.manchester import manchester_encode, manchester_decode
+from line.diff_manchester import diff_manchester_encode,diff_manchester_decode
 
 def main():
     """
@@ -16,11 +16,11 @@ def main():
     Returns:
         None
     """
-    signal = Signals("010010110110")
+    signal = Signals("10110010")
     signal.display()
-    manchester_encode(signal)
+    diff_manchester_encode(signal)
     signal.display()
-    manchester_decode(signal)
+    diff_manchester_decode(signal)
     signal.display()
     
 if __name__ == "__main__":
