@@ -10,7 +10,6 @@ To ensure a smooth and effective contribution process, please review the followi
    - If you have an idea for a contribution or want to work on an existing issue, raise an issue to discuss it or get assigned to an existing one.
    ```bash
    # Example command for creating an issue using the GitHub CLI
-   gh issue create -t "Description of the Issue" -b "Detailed information about the issue and your proposed solution."
 
 2. Fork the repository.
 
