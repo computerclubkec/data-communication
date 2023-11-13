@@ -6,25 +6,52 @@ To ensure a smooth and effective contribution process, please review the followi
 
 ## How to Contribute
 
-1. Fork the repository.
+1. **Raise an Issue or Get Assigned:**
+   - If you have an idea for a contribution or want to work on an existing issue, raise an issue to discuss it or get assigned to an existing one.
+   ```bash
+   # Example command for creating an issue using the GitHub CLI
+   gh issue create -t "Description of the Issue" -b "Detailed information about the issue and your proposed solution."
 
-2. Clone the forked repository to your local machine.
+2. Fork the repository.
+
+3. Clone the forked repository to your local machine.
 
     ```bash
     git clone git@github.com:<your_username>/data-communication
     ```
+  
+4. Install Requirements:
+    - Before running or testing your changes, make sure to install the required dependencies. Navigate to the project directory and run:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-3.  Create a new branch for your changes.
+5.  Create a new branch for your changes.
 
     ```bash
     git checkout -b <branch-name>
     ```
-4.  Make your changes and commit them.
 
-5.  Push your changes to your forked repository.
+6.  Make your changes and commit them.
+    
+    ```bash
+    # Example commands for making changes and committing them
+    git add .
+    git commit -m "Description of your changes"
+    ```
+
+7.  Push your changes to your forked repository.
     ```bash
     git push origin <branch-name>
     ```
+    
+8. Create a pull request to merge your changes into the main repository.
+    - Once you've pushed your changes, open a pull request to propose the changes for review and inclusion.
+    - Ensure that your pull request title and description are clear and concise.
+    - Include a screenshot or GIF of your changes if applicable.
+    - Include a link to the issue you are addressing in your pull request description.
+    - If your pull request is related to an existing issue, include the issue number in the pull request description.
+    
 ## Contribution Guidelines
 
 - **Be Clear and Concise:**
