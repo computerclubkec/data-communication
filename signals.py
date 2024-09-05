@@ -91,17 +91,19 @@ class Signals:
         self.name = "Original Signal"
         self.signal = self.intial_bits
 
-    def display(self) -> None:
+    def display(self, show=True) -> plt.figure:
         """
         Display a plot of the binary signal with timestamps and labels.
 
         Returns:
-            None
+           matplotlib figure 
         """
-        plt.figure()
+        fig = plt.figure()
         plt.plot(self.bits_duration, self.signal)
         plt.grid(True)
         plt.xticks(range(0, len(self.bits) + 1))
         plt.yticks([-1, 0, 1])
         plt.title(f"{self.name} for: {self.intial_bits}")
-        plt.show()
+        if show:
+            plt.show()
+        return fig
