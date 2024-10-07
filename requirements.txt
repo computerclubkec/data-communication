@@ -24,7 +24,7 @@ matplotlib
 mccabe==0.7.0
 mdurl==0.1.2
 narwhals==1.6.2
-numpy==1.26.4
+numpy
 packaging==23.2
 pandas==2.2.2
 Pillow==10.1.0
